@@ -1,1 +1,140 @@
-/* Add styles here */
+/* Basic Reset & Body Styling */
+:root {
+    --primary-bg-color: #1a1a1a;
+    --secondary-bg-color: #2a2a2a;
+    --text-color: #e0e0e0;
+    --accent-color: #8be9fd; /* A lighter, more vibrant accent for dark theme */
+    --link-color: #50fa7b; /* Greenish for links */
+    --link-hover-color: #ff79c6; /* Pinkish for link hover */
+    --border-color: #444;
+    --card-bg-color: #282a36; /* Darker background for cards/categories */
+    --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+.header {
+    background-color: var(--secondary-bg-color);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--accent-color);
+    font-size: 2.5em;
+    text-shadow: 0 0 5px rgba(139, 233, 253, 0.5); /* Subtle glow */
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 40px 0;
+    min-height: 60vh; /* Ensure some height for content */
+}
+
+.main-content .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.category-section {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.category-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.category-section h2 {
+    color: var(--accent-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+}
+
+.link-list a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block; /* Make the whole area clickable */
+    padding: 5px 0;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.link-list a:hover {
+    color: var(--link-hover-color);
+    transform: translateX(5px); /* Slight movement on hover */
+    text-decoration: underline;
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    .main-content .container {
+        grid-template-columns: 1fr; /* Stack categories on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+    .container {
+        padding: 15px;
+    }
+    .category-section {
+        padding: 20px;
+    }
+    .category-section h2 {
+        font-size: 1.5em;
+    }
+    .link-list a {
+        font-size: 1em;
+    }
+}

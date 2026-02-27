@@ -1,1 +1,1 @@
-// Add JS here
+// main.js - Reserved for future JavaScript interactivity
