@@ -11,13 +11,16 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   `style.css`: CSS file for all styling.
     *   `main.js`: JavaScript file for any interactivity (initially minimal).
 *   **Key Design Elements (inspired by linkroom.org analysis):**
-    *   Clear header with site title.
+    *   Clear header with site title and navigation menu.
     *   Main content area structured with categories and lists of links.
     *   Simple, readable typography (sans-serif).
     *   High-contrast color scheme (e.g., dark background with light text).
     *   Responsive design.
     *   Distinct footer.
     *   Advertisement banners at the top.
+    *   A central, horizontally arranged "배고광코칸" feature.
+    *   Top-right horizontal menu for general navigation (Login, etc.).
+    *   Top-left horizontal menu for "게시판 기능" (Announcements, Free Board, Telegram Inquiry).
 
 ## Implemented Features (Completed)
 
@@ -46,6 +49,25 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   Styled the `.ad-banners` container using Flexbox to arrange banners horizontally with a gap.
     *   Styled individual `.ad-banner-item` elements with distinct background, height, borders, and centered text.
     *   Implemented responsiveness for the ad banners, causing them to stack vertically on smaller screens.
+5.  **Top Right Navigation Menu (General Navigation):**
+    *   Initially had "공지사항", "자유게시판", "텔레문의", and "로그인".
+    *   Now contains only "로그인" in `<nav class="main-nav">` within the `<header .container>`.
+    *   Styled the navigation menu to display horizontally using flexbox, with appropriate spacing and hover effects, integrating seamlessly with the existing dark theme.
+    *   **Alignment:** Modified the header's CSS to use flexbox, aligning the `<h1>` title to the left and the `.main-nav` to the right within the header, while ensuring proper vertical alignment and responsiveness.
+    *   **Box Styling:** The `.main-nav a` style gives it a distinct background, increased padding, and a border to create a "box" appearance, and refined hover styles for these new box-like elements.
+6.  **"배고광코칸" Feature:**
+    *   Added a new `<section class="feature-input-section">` element within the `<main-content>` container in `index.html`, before the existing categories, with a placeholder input and button.
+    *   Styled the `.feature-input-section` to provide vertical spacing and a distinct background.
+    *   Styled its internal `input-container` to be a horizontal flex container and centered its contents.
+    *   Styled the input field and button to match the dark theme, including appropriate padding, borders, background, text color, and hover effects.
+    *   Implemented responsiveness for this section, allowing the input and button to stack vertically on smaller screens.
+7.  **Top Left "게시판 기능" Menu:**
+    *   Introduced a new `div` wrapper (`<div class="header-left-group">`) within `.header .container`.
+    *   Moved the `<h1>세븐챠트</h1>` inside this `header-left-group`.
+    *   Added a new `<nav class="board-nav">` with "공지사항", "자유게시판", and "텔레문의" links *within* this `header-left-group`.
+    *   Adjusted the `.header .container` to manage `header-left-group` and `main-nav`.
+    *   Styled `header-left-group` to arrange its contents (h1 and board-nav).
+    *   Styled `board-nav` (including its links) to match the "square box" style and integrate with the left side, ensuring responsiveness.
 
 ## Next Steps / Future Enhancements
 
