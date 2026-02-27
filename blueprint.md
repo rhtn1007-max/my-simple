@@ -17,6 +17,7 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   High-contrast color scheme (e.g., dark background with light text).
     *   Responsive design.
     *   Distinct footer.
+    *   Advertisement banners at the top.
 
 ## Implemented Features (Completed)
 
@@ -40,6 +41,11 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   Styled the lists of links, removing default list styles.
     *   Styled individual links with specific colors and hover effects for a high-contrast and minimalist aesthetic.
     *   Ensured basic responsiveness for the overall layout.
+4.  **Advertisement Banners:**
+    *   Added a `<section class="ad-banners">` immediately after the `<header>` in `index.html`, containing three `div` elements for placeholder banners.
+    *   Styled the `.ad-banners` container using Flexbox to arrange banners horizontally with a gap.
+    *   Styled individual `.ad-banner-item` elements with distinct background, height, borders, and centered text.
+    *   Implemented responsiveness for the ad banners, causing them to stack vertically on smaller screens.
 
 ## Next Steps / Future Enhancements
 

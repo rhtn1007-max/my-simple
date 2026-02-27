@@ -6,14 +6,12 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.nodejs_20
-    pkgs.python3
   ];
   # Sets environment variables in the workspace
   env = {};
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      # "vscodevim.vim"
       "google.gemini-cli-vscode-ide-companion"
     ];
     # Enable previews and customize configuration
@@ -21,14 +19,13 @@
       enable = true;
       previews = {
         web = {
-          command = ["python3" "-m" "http.server" "$PORT" "--bind" "0.0.0.0"];
-          manager = "web";
+          command = ["npx" "-y" "http-server" "-p" "$PORT" "-a" "0.0.0.0" "--cors"];
         };
       };
     };
-    # Workspace lifecycle hooks
+    # The following attributes are used to configure the workspace when it is created.
     workspace = {
-      # Runs when a workspace is first created
+      # Runs when the workspace is created
       onCreate = {
         # Example: install JS dependencies from NPM
         # npm-install = "npm install";

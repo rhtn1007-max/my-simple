@@ -119,6 +119,16 @@ body {
     .main-content .container {
         grid-template-columns: 1fr; /* Stack categories on smaller screens */
     }
+    .ad-banners .container {
+        flex-direction: column; /* Stack ad banners vertically on smaller screens */
+    }
+    .ad-banner-item {
+        width: 100%; /* Full width for stacked banners */
+        margin-bottom: 15px; /* Space between stacked banners */
+    }
+    .ad-banner-item:last-child {
+        margin-bottom: 0; /* No margin after the last stacked banner */
+    }
 }
 
 @media (max-width: 480px) {
@@ -137,4 +147,41 @@ body {
     .link-list a {
         font-size: 1em;
     }
+}
+/* Ad Banners Styling */
+.ad-banners {
+    background-color: var(--card-bg-color);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.ad-banners .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow banners to wrap on smaller screens before stacking */
+}
+
+.ad-banner-item {
+    flex: 1; /* Distribute space evenly */
+    min-width: 250px; /* Minimum width for each banner before wrapping */
+    background-color: #444;
+    color: #eee;
+    padding: 30px 10px;
+    border-radius: 8px;
+    border: 1px dashed var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 100px; /* Fixed height for banners */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ad-banner-item:hover {
+    background-color: #555;
+    border-color: var(--link-hover-color);
+    cursor: pointer;
 }
