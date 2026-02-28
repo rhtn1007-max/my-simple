@@ -48,6 +48,11 @@ body {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
 .header h1 {
     margin: 0; /* Reset margin for flexbox */
     color: var(--accent-color);
@@ -232,6 +237,44 @@ body {
     color: var(--link-hover-color);
     transform: translateX(5px); /* Slight movement on hover */
     text-decoration: underline;
+}
+
+/* Ranking Specific Styling */
+.ranking-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ranking-list li:last-child {
+    border-bottom: none;
+}
+
+.rank {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+}
+
+.ranking-list li:nth-child(1) .rank {
+    background-color: #ffd700; /* Gold */
+    color: #000;
+}
+
+.ranking-list li:nth-child(2) .rank {
+    background-color: #c0c0c0; /* Silver */
+    color: #000;
+}
+
+.ranking-list li:nth-child(3) .rank {
+    background-color: #cd7f32; /* Bronze */
+    color: #000;
 }
 
 

@@ -68,6 +68,11 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   Adjusted the `.header .container` to manage `header-left-group` and `main-nav`.
     *   Styled `header-left-group` to arrange its contents (h1 and board-nav).
     *   Styled `board-nav` (including its links) to match the "square box" style and integrate with the left side, ensuring responsiveness.
+9.  **Home Functionality & Ranking System:**
+    *   **Home Link:** Wrapped the main title "세븐챠트" in an anchor tag linking to `index.html`, effectively making it a "Home" button.
+    *   **10-Item Rankings:** Expanded all chart categories to include exactly 10 ranked items, providing a more comprehensive overview.
+    *   **Visual Ranking:** Added numerical rank indicators (1-10) for each list item.
+    *   **Top 3 Highlighting:** Implemented special CSS styling for the top three ranks (Gold, Silver, Bronze) to make them visually distinct and improve readability.
 
 ## Next Steps / Future Enhancements
 
