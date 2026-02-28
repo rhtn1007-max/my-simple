@@ -96,16 +96,17 @@ body {
     padding: 0;
     margin: 0;
     display: flex; /* Horizontal layout */
-    gap: 25px; /* Space between menu items */
+    gap: 15px; /* Reduced gap between menu items */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     justify-content: flex-end; /* Align items to the right when wrapped */
+    align-items: center; /* Vertically center search and login */
 }
 
 .main-nav a {
     color: var(--text-color); /* Changed to text-color for better contrast on background */
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 10px 15px; /* Increased padding for box effect */
+    font-size: 1em; /* Slightly smaller for better fit */
+    padding: 8px 15px; /* Adjusted padding */
     border-radius: 8px; /* Slightly rounded corners for the box */
     background-color: var(--primary-bg-color); /* Background for the box */
     border: 1px solid var(--border-color); /* Border for the box */
@@ -118,6 +119,58 @@ body {
     color: var(--primary-bg-color); /* Dark text on accent background */
     border-color: var(--accent-color);
     transform: translateY(-2px);
+}
+
+/* Header Search Styling */
+.header-search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 4px 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-search:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(139, 233, 253, 0.3);
+}
+
+.header-search-input {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 0.9em;
+    padding: 4px;
+    outline: none;
+    width: 150px; /* Compact width */
+    transition: width 0.3s ease;
+}
+
+.header-search-input:focus {
+    width: 200px; /* Expand slightly on focus */
+}
+
+.header-search-input::placeholder {
+    color: #666;
+}
+
+.header-search-button {
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header-search-button:hover {
+    background-color: var(--link-hover-color);
 }
 
 
@@ -267,70 +320,13 @@ body {
     cursor: pointer;
 }
 
-/* Feature Input Section (배고광코칸) Styling */
-.feature-input-section {
-    padding: 40px 0; /* Add some vertical spacing */
-    background-color: var(--secondary-bg-color); /* A slightly different background */
-    border-bottom: 1px solid var(--border-color);
-}
-
-.feature-input-section .input-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;
-    gap: 15px; /* Space between input and button */
-    flex-wrap: wrap; /* Allow elements to wrap on small screens */
-    max-width: 800px; /* Limit width for better appearance */
-}
-
-.feature-input {
-    flex-grow: 1; /* Allow input to take available space */
-    max-width: 500px; /* Max width for input */
-    padding: 12px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-    font-size: 1.1em;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-input::placeholder {
-    color: #888;
-}
-
-.feature-input:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 8px rgba(139, 233, 253, 0.5);
-}
-
-.feature-button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--accent-color);
-    color: var(--primary-bg-color);
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.feature-button:hover {
-    background-color: var(--link-hover-color);
-    transform: translateY(-2px);
-}
-
-/* Responsive adjustments for feature input section */
+/* Responsive adjustments for header search */
 @media (max-width: 600px) {
-    .feature-input-section .input-container {
-        flex-direction: column; /* Stack input and button vertically */
-        gap: 10px;
+    .header-search {
+        order: -1;
+        width: 100%;
     }
-    .feature-input,
-    .feature-button {
-        width: 100%; /* Full width when stacked */
-        max-width: none;
+    .header-search-input {
+        width: 100%;
     }
 }

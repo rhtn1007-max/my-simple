@@ -18,7 +18,7 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   Responsive design.
     *   Distinct footer.
     *   Advertisement banners at the top.
-    *   A central, horizontally arranged "배고광코칸" feature.
+    *   A compact search bar in the header, placed before the navigation/login links.
     *   Top-right horizontal menu for general navigation (Login, etc.).
     *   Top-left horizontal menu for "게시판 기능" (Announcements, Free Board, Telegram Inquiry).
 
@@ -51,16 +51,11 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   Implemented responsiveness for the ad banners, causing them to stack vertically on smaller screens.
 5.  **Top Right Navigation Menu (General Navigation):**
     *   Initially had "공지사항", "자유게시판", "텔레문의", and "로그인".
-    *   Now contains only "로그인" in `<nav class="main-nav">` within the `<header .container>`.
+    *   Now contains "로그인" and a compact **Header Search Bar** in `<nav class="main-nav">` within the `<header .container>`.
     *   Styled the navigation menu to display horizontally using flexbox, with appropriate spacing and hover effects, integrating seamlessly with the existing dark theme.
-    *   **Alignment:** Modified the header's CSS to use flexbox, aligning the `<h1>` title to the left and the `.main-nav` to the right within the header, while ensuring proper vertical alignment and responsiveness.
-    *   **Box Styling:** The `.main-nav a` style gives it a distinct background, increased padding, and a border to create a "box" appearance, and refined hover styles for these new box-like elements.
-6.  **"배고광코칸" Feature:**
-    *   Added a new `<section class="feature-input-section">` element within the `<main-content>` container in `index.html`, before the existing categories, with a placeholder input and button.
-    *   Styled the `.feature-input-section` to provide vertical spacing and a distinct background.
-    *   Styled its internal `input-container` to be a horizontal flex container and centered its contents.
-    *   Styled the input field and button to match the dark theme, including appropriate padding, borders, background, text color, and hover effects.
-    *   Implemented responsiveness for this section, allowing the input and button to stack vertically on smaller screens.
+    *   **Header Search:** Added a compact search input and button before the login button. The search input expands slightly on focus and is designed to fit elegantly within the header.
+    *   **Alignment:** Modified the header's CSS to use flexbox, aligning the `<h1>` title and `board-nav` to the left, and the `.main-nav` (including search and login) to the right within the header, while ensuring proper vertical alignment and responsiveness.
+    *   **Box Styling:** The `.main-nav a` and `.header-search` style gives them a distinct background, padding, and a border to create a "box" appearance, and refined hover styles for these elements.
 7.  **Top Left "게시판 기능" Menu:**
     *   Introduced a new `div` wrapper (`<div class="header-left-group">`) within `.header .container`.
     *   Moved the `<h1>세븐챠트</h1>` inside this `header-left-group`.
