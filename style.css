@@ -245,43 +245,6 @@ body {
     font-size: 0.9em;
 }
 
-/* Basic Responsiveness */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 2em;
-    }
-    .main-content .container {
-        grid-template-columns: 1fr; /* Stack categories on smaller screens */
-    }
-    .ad-banners .container {
-        flex-direction: column; /* Stack ad banners vertically on smaller screens */
-    }
-    .ad-banner-item {
-        width: 100%; /* Full width for stacked banners */
-        margin-bottom: 15px; /* Space between stacked banners */
-    }
-    .ad-banner-item:last-child {
-        margin-bottom: 0; /* No margin after the last stacked banner */
-    }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.5em;
-    }
-    .container {
-        padding: 15px;
-    }
-    .category-section {
-        padding: 20px;
-    }
-    .category-section h2 {
-        font-size: 1.5em;
-    }
-    .link-list a {
-        font-size: 1em;
-    }
-}
 /* Ad Banners Styling */
 .ad-banners {
     background-color: var(--card-bg-color);
@@ -320,13 +283,92 @@ body {
     cursor: pointer;
 }
 
-/* Responsive adjustments for header search */
-@media (max-width: 600px) {
-    .header-search {
-        order: -1;
+/* Responsive Design & Mobile Optimization */
+@media (max-width: 992px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .header-left-group {
+        justify-content: space-between;
         width: 100%;
     }
+
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .main-nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-nav ul {
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .header-search {
+        flex-grow: 1;
+    }
+
     .header-search-input {
         width: 100%;
+    }
+
+    .main-content .container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .ad-banners .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ad-banner-item {
+        min-width: unset;
+        width: 100%;
+        height: 80px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .board-nav a {
+        padding: 6px 10px;
+        font-size: 0.85em;
+    }
+
+    .main-nav a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    .category-section {
+        padding: 15px;
+    }
+
+    .category-section h2 {
+        font-size: 1.4em;
+    }
+
+    .link-list a {
+        padding: 10px 0; /* Larger touch targets */
+        font-size: 1em;
     }
 }

@@ -56,6 +56,11 @@ This blueprint outlines the creation of a homepage named "세븐챠트" (Seven C
     *   **Header Search:** Added a compact search input and button before the login button. The search input expands slightly on focus and is designed to fit elegantly within the header.
     *   **Alignment:** Modified the header's CSS to use flexbox, aligning the `<h1>` title and `board-nav` to the left, and the `.main-nav` (including search and login) to the right within the header, while ensuring proper vertical alignment and responsiveness.
     *   **Box Styling:** The `.main-nav a` and `.header-search` style gives them a distinct background, padding, and a border to create a "box" appearance, and refined hover styles for these elements.
+8.  **Mobile Optimization:**
+    *   **Responsive Header:** Implemented a flexible header that stacks elements (logo, board navigation, search, and login) vertically on smaller screens for better space utilization.
+    *   **Touch Targets:** Increased the vertical padding for links in the category sections on mobile devices to improve touch accessibility.
+    *   **Adaptive Layout:** Consolidated media queries to handle various screen sizes (992px, 768px, 480px) for consistent spacing, font sizes, and container widths.
+    *   **Ad Banner Scaling:** Adjusted ad banner sizes and layout to ensure they remain readable and don't overflow on small mobile screens.
 7.  **Top Left "게시판 기능" Menu:**
     *   Introduced a new `div` wrapper (`<div class="header-left-group">`) within `.header .container`.
     *   Moved the `<h1>세븐챠트</h1>` inside this `header-left-group`.
